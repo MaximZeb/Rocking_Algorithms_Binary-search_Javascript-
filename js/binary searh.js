@@ -7,33 +7,51 @@ for (x = 1; x < 101; x++) {
 }
 
 // Убирает запятую после 100
-// let lengthSto = -1 * NumberSto.length; //392
-// let result = NumberSto.slice(lengthSto, 390);
+let lengthStoMinus = -1 * NumberSto.length; //392
+let result = NumberSto.slice(lengthStoMinus, 390);
+let lengthStoPlus = NumberSto.length;
 
 // Проверка
-// console.log(result);
+console.log(result);
+// переменные для плюса
+let stoone = 101;
+let NumberFitftiPlus = 50; // первое число с которого начинается отсчет в лево или вправо в зависимости от ответа пользователя
+let FirstPos = result.indexOf(NumberFitftiPlus); // возращает индекс первого значения
+let EndPos = result.lastIndexOf(stoone); //
 
-let NumberChangePlus = 50;
-let FirstPos = NumberSto.indexOf(NumberChangePlus);
-let EndPos = NumberSto.lastIndexOf(100);
+// переменные для минуса
+let zerto = 0;
+let NumberFitftiMinus = 51;
+let FirstPosMinus = result.indexOf(zerto); // возращает индекс первого значения
+let EndPosMinus = result.lastIndexOf(NumberFitftiMinus); //
+// Проверка
+// console.log(EndPos);
 
-console.log(FirstPos);
 
+// Функция с первым вопросом
+function firstQuets () {
+	var FirstAnswer = prompt("Это число равно,больше или меньше 50?");
+	var Result = FirstAnswer.toLowerCase();
+	if (Result === "меньше") {
+		NumberSto = NumberSto.slice(FirstPos,EndPos);
+		NumberFitftiPlus += 25;
+		console.log(NumberSto);
+		Twoquest (true);
+	} else if (Result === "больше") {
+		NumberFitftiMinus -= 25;
+		NumberSto = NumberSto.slice(FirstPosMinus,EndPosMinus);
+		console.log(NumberSto);
+		Twoquest ();
+	} else if (Result === "равно") {
+		alert("Ура! А Вы смелый человек раз решились со машиной играть")
+	} else {
+		prompt("Напиши пожалйуста Да или Нет. Это число равно 50 или больше 50 или меньше?")
+	}
+}
 
-// // Функция с первыйм вопросом
-// function firstQuets () {
-// 	var FirstQuestions = prompt("Это число больше 50?");
-// 	var Result = FirstQuestions.toLowerCase;
-// 	if (FirstQuestions == "да") {
-// 		NumberSto.slice(FirstPos,EndPos)
-// 		NumberChangePlus += 25;
-// 	} else if(FirstQuestions == "нет") {
-
-// 	} else {
-// 		prompt("Напиши пожалйуста Да или Нет. Это число больше 50?")
-// 	}
-// }
-
-// function Twoquest () {
-
-// } 
+function Twoquest (answer) {
+	if(answer === true){
+		var TwoAnswer = prompt("Это число равно,больше или меньше 50?");
+	}
+	
+} 
