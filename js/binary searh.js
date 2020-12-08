@@ -27,31 +27,75 @@ let EndPosMinus = result.lastIndexOf(NumberFitftiMinus); //
 // Проверка
 // console.log(EndPos);
 
-
-// Функция с первым вопросом
-function firstQuets () {
-	var FirstAnswer = prompt("Это число равно,больше или меньше 50?");
-	var Result = FirstAnswer.toLowerCase();
-	if (Result === "меньше") {
-		NumberSto = NumberSto.slice(FirstPos,EndPos);
-		NumberFitftiPlus += 25;
-		console.log(NumberSto);
-		Twoquest (true);
-	} else if (Result === "больше") {
-		NumberFitftiMinus -= 25;
-		NumberSto = NumberSto.slice(FirstPosMinus,EndPosMinus);
-		console.log(NumberSto);
-		Twoquest ();
-	} else if (Result === "равно") {
-		alert("Ура! А Вы смелый человек раз решились со машиной играть")
-	} else {
-		prompt("Напиши пожалйуста Да или Нет. Это число равно 50 или больше 50 или меньше?")
-	}
+function chet () {
+	NumberSto = NumberSto.slice(FirstPos,EndPos);
 }
+ function uslovie () {
+ 	var FirstAnswer = prompt("Это число равно,больше или меньше " + NumberFitftiPlus + " ?");
+ }
 
-function Twoquest (answer) {
-	if(answer === true){
-		var TwoAnswer = prompt("Это число равно,больше или меньше 50?");
-	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Функция с первым вопросом
+// function firstQuets () {
+// 	var FirstAnswer = prompt("Это число равно,больше или меньше 50?");
+// 	var Result = FirstAnswer.toLowerCase();
+// 	if (Result === "меньше") {
+// 		NumberSto = NumberSto.slice(FirstPos,EndPos);
+// 		NumberFitftiPlus += 25;
+// 		console.log(NumberSto);
+// 		Twoquest (true);
+// 	} else if (Result === "больше") {
+// 		NumberFitftiMinus -= 25;
+// 		NumberSto = NumberSto.slice(FirstPosMinus,EndPosMinus);
+// 		console.log(NumberSto);
+// 		Twoquest ();
+// 	} else if (Result === "равно") {
+// 		alert("Ура! А Вы смелый человек раз решились со машиной играть")
+// 	} else {
+// 		prompt("Напиши пожалйуста Да или Нет. Это число равно 50 или больше 50 или меньше?")
+// 	}
+// }
+
+// function Twoquest (answer) {
+// 	if(answer === true){
+// 		var TwoAnswer = prompt("Это число равно,больше или меньше 50?");
+// 	}
 	
-} 
+// } 
