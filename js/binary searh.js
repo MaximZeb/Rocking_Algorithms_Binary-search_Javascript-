@@ -17,33 +17,43 @@ console.log(NumberSto);
 // переменные для плюса
 let OneHudred = 101;
 let Fifty = 50; // первое число с которого начинается отсчет в лево или вправо в зависимости от ответа пользователя
-let StartPos = result.indexOf(Fifty); // возращает индекс первого значения
-let EndPos = result.lastIndexOf(OneHudred); //
+let StartPos; // возращает индекс первого значения
+let EndPos; //возращает индекс последнего значения
+let Numberstr = 50;
 
+//Функция которая пересчитывает позиции
 function noname () {
-	return 
+	StartPos = result.indexOf(Fifty); // возращает индекс первого значения
+	EndPos = result.lastIndexOf(OneHudred); //
 }
+
 // Функция которая делит строку в зависимости от ответа пользователя
-function chet (StartPos,EndPos) {
+function chet () {
 	NumberSto = NumberSto.slice(StartPos,EndPos);
 }
 
  function conditional () {
- 	var FirstAnswer = prompt("Это число равно, больше или меньше " + Fifty + " ?");
+ 	var FirstAnswer = prompt("Это число равно, больше или меньше " + Numberstr + " ?");
  	var Result = FirstAnswer.toLowerCase();
  	switch (Result) {
  		case "больше":
- 			chet (StartPos,EndPos);
+ 			noname ();
+ 			chet ();
  			console.log(NumberSto);
+ 			conditional2 ();
+ 			Numberstr +=25;
  		break;
  		case "меньше":
- 			Fifty -= 50;
+ 			Fifty -= 49;
  			OneHudred -= 50;
- 			chet (StartPos,EndPos);
- 			console.log(Fifty);
+ 			Numberstr -=25;
+ 			noname ();
+ 			chet ();
+ 			console.log(NumberSto);
+ 			conditional2 ();
  		break;
  		case "равно":
- 			alert("Ура! Я угадал. А Вы смелый человек раз решились со машиной играть")
+ 			alert("Ура! Я угадал. А Вы смелый человек раз решились с машиной играть.")
  		break;
  		case null:
 			uslovie ();	
@@ -51,6 +61,35 @@ function chet (StartPos,EndPos) {
  	}
  }
 
+ // Это второй вопрос
+ function conditional2 () {
+ 	var FirstAnswer = prompt("Это число равно, больше или меньше " + Numberstr + " ?");
+ 	var Result = FirstAnswer.toLowerCase();
+ 	switch (Result) {
+ 		case "больше":
+ 			Fifty += 25;
+ 			noname ();
+ 			chet ();
+ 			console.log(NumberSto);
+ 			
+ 		break;
+ 		case "меньше":
+ 			Fifty -= 49;
+ 			OneHudred -= 50;
+ 			noname ();
+ 			chet ();
+ 			console.log(NumberSto);
+ 			Fifty += 24;
+ 			conditional3 ();
+ 		break;
+ 		case "равно":
+ 			alert("Ура! Я угадал. А Вы смелый человек раз решились с машиной играть.")
+ 		break;
+ 		case null:
+			uslovie ();	
+ 		break;
+ 	}
+ }
 
 
 
