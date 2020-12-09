@@ -1,35 +1,32 @@
 // Блок кода который прописывает 1 до 100 число с типом данных string
 let NumberSto = "";
 let x = 1;
-let poru = ", ";
+let poru = "";
 for (x = 1; x < 101; x++) {
 	NumberSto += x + poru;  // "1, " + 2 + ", " + 3 ", " ...
 }
 
-// Убирает запятую после 100
-let lengthStoMinus = -1 * NumberSto.length; //392
-let result = NumberSto.slice(lengthStoMinus, 390);
-let lengthStoPlus = NumberSto.length;
+// Убирает пробел после 100
+let lengthStoMinus = -1 * NumberSto.length; 
+let result = NumberSto.slice(lengthStoMinus, -1);
+
 
 // Проверка
 console.log(NumberSto);
 
-// переменные для плюса
-let OneHudred = 101;
+// переменные
+let OneHudred = 103;
 let Fifty = 50; // первое число с которого начинается отсчет в лево или вправо в зависимости от ответа пользователя
 let StartPos; // возращает индекс первого значения
 let EndPos; //возращает индекс последнего значения
 let Numberstr = 50;
-
-//Функция которая пересчитывает позиции
-function noname () {
-	StartPos = result.indexOf(Fifty); // возращает индекс первого значения
-	EndPos = result.lastIndexOf(OneHudred); //
-}
+console.log(OneHudred);
 
 // Функция которая делит строку в зависимости от ответа пользователя
 function chet () {
-	NumberSto = NumberSto.slice(StartPos,EndPos);
+	StartPos = result.indexOf(Fifty); // возращает индекс первого значения
+	EndPos = result.lastIndexOf(OneHudred); //
+	NumberSto = result.slice(StartPos,EndPos);
 }
 
  function conditional () {
@@ -37,17 +34,17 @@ function chet () {
  	var Result = FirstAnswer.toLowerCase();
  	switch (Result) {
  		case "больше":
- 			noname ();
+ 			Numberstr += 25;
+ 			
  			chet ();
  			console.log(NumberSto);
  			conditional2 ();
- 			Numberstr +=25;
  		break;
  		case "меньше":
  			Fifty -= 49;
  			OneHudred -= 50;
- 			Numberstr -=25;
- 			noname ();
+ 			Numberstr -= 25;
+ 			
  			chet ();
  			console.log(NumberSto);
  			conditional2 ();
@@ -56,7 +53,7 @@ function chet () {
  			alert("Ура! Я угадал. А Вы смелый человек раз решились с машиной играть.")
  		break;
  		case null:
-			uslovie ();	
+			conditional ();	
  		break;
  	}
  }
@@ -68,29 +65,58 @@ function chet () {
  	switch (Result) {
  		case "больше":
  			Fifty += 25;
- 			noname ();
+ 			Numberstr += 13;
+ 			
  			chet ();
  			console.log(NumberSto);
- 			
+ 			conditional3 ()
  		break;
  		case "меньше":
+ 			Numberstr -= 13;
  			Fifty -= 49;
  			OneHudred -= 50;
- 			noname ();
+ 			
  			chet ();
  			console.log(NumberSto);
  			Fifty += 24;
- 			conditional3 ();
  		break;
  		case "равно":
  			alert("Ура! Я угадал. А Вы смелый человек раз решились с машиной играть.")
  		break;
  		case null:
-			uslovie ();	
+			conditional2 ();	
  		break;
  	}
  }
-
+// Это третий вопрос
+ function conditional3 () {
+ 	var FirstAnswer = prompt("Это число равно, больше или меньше " + Numberstr + " ?");
+ 	var Result = FirstAnswer.toLowerCase();
+ 	switch (Result) {
+ 		case "больше":
+ 			Fifty += 13;
+ 			
+ 			
+ 			chet ();
+ 			console.log(NumberSto);
+ 			
+ 		break;
+ 		case "меньше":
+ 			Fifty -= 13;
+ 			OneHudred -= 50;
+ 			
+ 			chet ();
+ 			console.log(NumberSto);
+ 			Fifty += 24;
+ 		break;
+ 		case "равно":
+ 			alert("Ура! Я угадал. А Вы смелый человек раз решились с машиной играть.")
+ 		break;
+ 		case null:
+			conditional2 ();	
+ 		break;
+ 	}
+ }
 
 
 
