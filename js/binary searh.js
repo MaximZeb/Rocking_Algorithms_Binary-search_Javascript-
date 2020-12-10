@@ -5,16 +5,20 @@ let poru = " ";
 for (x = 1; x < 101; x++) {
 	NumberSto += x + poru;  // "1, " + 2 + ", " + 3 ", " ...
 }
-
-// Убирает пробел после 100
 let result = NumberSto.trim();
+// Убирает пробел после 100
+function space () {
+	return result = result.trim();
+
+}
 
 
 // Проверка
 console.log(result);
 
 // переменные
-let kost = 6
+let kostM = 6;
+let kost = 8;
 let Fifty = 50;
 let StartPos; // возращает индекс первого значения
 let EndPos; //возращает индекс последнего значения
@@ -33,7 +37,7 @@ function chetMinus () {
 	}
 	}
 	proverka ();
-	EndPos = EndPos / 2 - kost;
+	EndPos = EndPos / 2 - kostM;
 
 	result = result.slice(StartPos,EndPos);
 }
@@ -61,18 +65,22 @@ function chet () {
  	switch (Result) {
  		case "больше":
  			Numberstr += 25;
+ 			space ();
  			chet ();
  			console.log(StartPos);
  			console.log(EndPos);
  			console.log(result);
+ 			kost = 0;
  			conditional2 ();
  		break;
  		case "меньше":
  			Numberstr -= 25;
+ 			space ();
  			chetMinus ();
  			console.log(StartPos);
  			console.log(EndPos);
  			console.log(result);
+ 			kostM = 5;
  			conditional2 ();
  		break;
  		case "равно":
@@ -91,18 +99,22 @@ function chet () {
  	switch (Result) {
  		case "больше":
  			Numberstr += 13;
+ 			space ();
  			chet ();
  			console.log(StartPos);
  			console.log(EndPos);
  			console.log(result);
+ 			kost = -1;
  			conditional3 ();
  		break;
  		case "меньше":
  			Numberstr -= 13;
+ 			space ();
  			chetMinus ();
  			console.log(StartPos);
  			console.log(EndPos);
  			console.log(result);
+ 			kostM = 9;
  			conditional3 ();
  		break;
  		case "равно":
@@ -121,17 +133,21 @@ function conditional3 () {
  		case "больше":
  			Numberstr += 6;
  			chet ();
+ 			space ();
  			console.log(StartPos);
  			console.log(EndPos);
  			console.log(result);
+ 			kost = 0;
  			conditional4 ();
  		break;
  		case "меньше":
  			Numberstr -= 6;
  			chetMinus ();
+ 			space ();
  			console.log(StartPos);
  			console.log(EndPos);
  			console.log(result);
+ 			kostM = 3;
  			conditional4 ();
  		break;
  		case "равно":
@@ -148,19 +164,22 @@ function conditional4 () {
  	var Result = FirstAnswer.toLowerCase();
  	switch (Result) {
  		case "больше":
- 			Numberstr += 25;
+ 			Numberstr += 3;
  			chet ();
+ 			space ();
  			console.log(StartPos);
  			console.log(EndPos);
  			console.log(result);
  			conditional5 ();
  		break;
  		case "меньше":
- 			Numberstr -= 25;
+ 			Numberstr -= 3;
  			chetMinus ();
+ 			space ();
  			console.log(StartPos);
  			console.log(EndPos);
  			console.log(result);
+ 			kostM = 2;
  			conditional5 ();
  		break;
  		case "равно":
@@ -177,7 +196,8 @@ function conditional5 () {
  	var Result = FirstAnswer.toLowerCase();
  	switch (Result) {
  		case "больше":
- 			Numberstr += 25;
+ 			Numberstr += 2;
+ 			space ();
  			chet ();
  			console.log(StartPos);
  			console.log(EndPos);
@@ -185,7 +205,8 @@ function conditional5 () {
  			conditional6 ();
  		break;
  		case "меньше":
- 			Numberstr -= 25;
+ 			Numberstr -= 2;
+ 			space ();
  			chetMinus ();
  			console.log(StartPos);
  			console.log(EndPos);
@@ -206,7 +227,8 @@ function conditional6 () {
  	var Result = FirstAnswer.toLowerCase();
  	switch (Result) {
  		case "больше":
- 			Numberstr += 25;
+ 			Numberstr += 1;
+ 			space ();
  			chet ();
  			console.log(StartPos);
  			console.log(EndPos);
@@ -214,7 +236,8 @@ function conditional6 () {
  			conditional7 ();
  		break;
  		case "меньше":
- 			Numberstr -= 25;
+ 			Numberstr -= 1;
+ 			space ();
  			chetMinus ();
  			console.log(StartPos);
  			console.log(EndPos);
