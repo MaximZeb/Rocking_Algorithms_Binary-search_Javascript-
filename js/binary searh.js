@@ -39,8 +39,19 @@ function chetMinus () {
 }
 
 function chet () {
-	StartPos = result.indexOf(Fifty); // возращает индекс первого значения
+	StartPos = result.length;
+	function proverka (){
+	if (StartPos%2 === 0) {
+		return StartPos;
+	} else {
+		StartPos += + 1;
+	}
+	}
+	proverka ();
+	StartPos = StartPos / 2 - kost;
+	
 	EndPos = result.length; //
+
 	result = result.slice(StartPos,EndPos);
 }
 
@@ -51,12 +62,15 @@ function chet () {
  		case "больше":
  			Numberstr += 25;
  			chet ();
- 			console.log(NumberSto);
+ 			console.log(StartPos);
+ 			console.log(EndPos);
+ 			console.log(result);
  			conditional2 ();
  		break;
  		case "меньше":
  			Numberstr -= 25;
  			chetMinus ();
+ 			console.log(StartPos);
  			console.log(EndPos);
  			console.log(result);
  			conditional2 ();
@@ -78,12 +92,15 @@ function chet () {
  		case "больше":
  			Numberstr += 13;
  			chet ();
+ 			console.log(StartPos);
+ 			console.log(EndPos);
  			console.log(result);
  			conditional3 ();
  		break;
  		case "меньше":
  			Numberstr -= 13;
  			chetMinus ();
+ 			console.log(StartPos);
  			console.log(EndPos);
  			console.log(result);
  			conditional3 ();
@@ -104,12 +121,15 @@ function conditional3 () {
  		case "больше":
  			Numberstr += 6;
  			chet ();
+ 			console.log(StartPos);
+ 			console.log(EndPos);
  			console.log(result);
  			conditional4 ();
  		break;
  		case "меньше":
  			Numberstr -= 6;
  			chetMinus ();
+ 			console.log(StartPos);
  			console.log(EndPos);
  			console.log(result);
  			conditional4 ();
@@ -130,12 +150,15 @@ function conditional4 () {
  		case "больше":
  			Numberstr += 25;
  			chet ();
+ 			console.log(StartPos);
+ 			console.log(EndPos);
  			console.log(result);
  			conditional5 ();
  		break;
  		case "меньше":
  			Numberstr -= 25;
  			chetMinus ();
+ 			console.log(StartPos);
  			console.log(EndPos);
  			console.log(result);
  			conditional5 ();
@@ -156,12 +179,15 @@ function conditional5 () {
  		case "больше":
  			Numberstr += 25;
  			chet ();
+ 			console.log(StartPos);
+ 			console.log(EndPos);
  			console.log(result);
  			conditional6 ();
  		break;
  		case "меньше":
  			Numberstr -= 25;
  			chetMinus ();
+ 			console.log(StartPos);
  			console.log(EndPos);
  			console.log(result);
  			conditional6 ();
@@ -182,12 +208,15 @@ function conditional6 () {
  		case "больше":
  			Numberstr += 25;
  			chet ();
+ 			console.log(StartPos);
+ 			console.log(EndPos);
  			console.log(result);
  			conditional7 ();
  		break;
  		case "меньше":
  			Numberstr -= 25;
  			chetMinus ();
+ 			console.log(StartPos);
  			console.log(EndPos);
  			console.log(result);
  			conditional7 ();
@@ -208,11 +237,14 @@ function conditional7 () {
  		case "больше":
  			Numberstr += 25;
  			chet ();
+ 			console.log(StartPos);
+ 			console.log(EndPos);
  			console.log(result);
  		break;
  		case "меньше":
  			Numberstr -= 25;
  			chetMinus ();
+ 			console.log(StartPos);
  			console.log(EndPos);
  			console.log(result);
  		break;
