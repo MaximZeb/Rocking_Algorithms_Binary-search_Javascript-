@@ -1,18 +1,17 @@
 // Блок кода который прописывает 1 до 100 число с типом данных string
 let NumberSto = "";
 let x = 1;
-let poru = "";
+let poru = " ";
 for (x = 1; x < 101; x++) {
 	NumberSto += x + poru;  // "1, " + 2 + ", " + 3 ", " ...
 }
 
 // Убирает пробел после 100
-let lengthStoMinus = -1 * NumberSto.length; 
-let result = NumberSto.slice(lengthStoMinus, -1);
+let result = NumberSto.trim();
 
 
 // Проверка
-console.log(NumberSto);
+console.log(result);
 
 // переменные
 let OneHudred = 103;
@@ -99,7 +98,7 @@ function chet () {
  			
  			chet ();
  			console.log(NumberSto);
- 			
+ 			conditional4 ();
  		break;
  		case "меньше":
  			Fifty -= 13;
@@ -117,9 +116,134 @@ function chet () {
  		break;
  	}
  }
+// Это третий вопрос
+ function conditional4 () {
+ 	var FirstAnswer = prompt("Это число равно, больше или меньше " + Numberstr + " ?");
+ 	var Result = FirstAnswer.toLowerCase();
+ 	switch (Result) {
+ 		case "больше":
+ 			Fifty += 6;
+ 			
+ 			
+ 			chet ();
+ 			console.log(NumberSto);
+ 			conditional5 ();
+ 		break;
+ 		case "меньше":
+ 			Fifty -= 6;
+ 			OneHudred -= 50;
+ 			
+ 			chet ();
+ 			console.log(NumberSto);
+ 			Fifty += 24;
+ 		break;
+ 		case "равно":
+ 			alert("Ура! Я угадал. А Вы смелый человек раз решились с машиной играть.")
+ 		break;
+ 		case null:
+			conditional2 ();	
+ 		break;
+ 	}
+ }
+ // Это третий вопрос
+ function conditional5 () {
+ 	var FirstAnswer = prompt("Это число равно, больше или меньше " + Numberstr + " ?");
+ 	var Result = FirstAnswer.toLowerCase();
+ 	switch (Result) {
+ 		case "больше":
+ 			Fifty += 3;
+ 			
+ 			
+ 			chet ();
+ 			console.log(NumberSto);
+ 			conditional6 ();
+ 		break;
+ 		case "меньше":
+ 			Fifty -= 3;
+ 			OneHudred -= 50;
+ 			
+ 			chet ();
+ 			console.log(NumberSto);
+ 			Fifty += 24;
+ 		break;
+ 		case "равно":
+ 			alert("Ура! Я угадал. А Вы смелый человек раз решились с машиной играть.")
+ 		break;
+ 		case null:
+			conditional2 ();	
+ 		break;
+ 	}
+ }
+ // Это третий вопрос
+ function conditional6 () {
+ 	var FirstAnswer = prompt("Это число равно, больше или меньше " + Numberstr + " ?");
+ 	var Result = FirstAnswer.toLowerCase();
+ 	switch (Result) {
+ 		case "больше":
+ 			Fifty += 2;
+ 			
+ 			
+ 			chet ();
+ 			console.log(NumberSto);
+ 			conditional7 ();
+ 		break;
+ 		case "меньше":
+ 			Fifty -= 2;
+ 			OneHudred -= 50;
+ 			
+ 			chet ();
+ 			console.log(NumberSto);
+ 			Fifty += 24;
+ 		break;
+ 		case "равно":
+ 			alert("Ура! Я угадал. А Вы смелый человек раз решились с машиной играть.")
+ 		break;
+ 		case null:
+			conditional2 ();	
+ 		break;
+ 	}
+ }
+// Это третий вопрос
+ function conditional7 () {
+ 	var FirstAnswer = prompt("Это число равно, больше или меньше " + Numberstr + " ?");
+ 	var Result = FirstAnswer.toLowerCase();
+ 	switch (Result) {
+ 		case "больше":
+ 			Fifty += 1;
+ 			
+ 			
+ 			chet ();
+ 			console.log(NumberSto);
+ 			
+ 		break;
+ 		case "меньше":
+ 			Fifty -= 1;
+ 			OneHudred -= 50;
+ 			
+ 			chet ();
+ 			console.log(NumberSto);
+ 			Fifty += 24;
+ 		break;
+ 		case "равно":
+ 			alert("Ура! Я угадал. А Вы смелый человек раз решились с машиной играть.")
+ 		break;
+ 		case null:
+			conditional2 ();	
+ 		break;
+ 	}
+ }
 
 
 
+// Полифилы
+if (!String.prototype.trim) {
+  (function() {
+    // Вырезаем BOM и неразрывный пробел
+    String.prototype.trim = function() {
+      return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+    };
+  })();
+}
 
 
 
